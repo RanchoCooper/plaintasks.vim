@@ -25,7 +25,7 @@ function! ToggleComplete()
     s/ *@done.*$//
   elseif line =~ "^ *☐"
     s/^\( *\)☐/\1✔/
-    let text = " @done (" . strftime("%Y-%m-%d") .")"
+    let text = " @done (" . strftime("%Y-%m-%d %H:%M") .")"
     exec "normal A" . text
     normal _
   endif
@@ -38,7 +38,7 @@ function! ToggleCancel()
     s/ *@cancelled.*$//
   elseif line =~ "^ *☐"
     s/^\( *\)☐/\1✘/
-    let text = " @cancelled (" . strftime("%Y-%m-%d") .")"
+    let text = " @cancelled (" . strftime("%Y-%m-%d %H:%M") .")"
     exec "normal A" . text
     normal _
   endif
